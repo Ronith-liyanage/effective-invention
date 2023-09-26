@@ -54,19 +54,25 @@
         opacity: 1;
       }
     }
+
+    audio {
+      display: none; /* Initially hide the audio element */
+    }
   </style>
 </head>
 <body>
   <div class="video-container">
-    <iframe id="videoFrame" src="https://www.youtube.com/embed/APHrOAFU6x8?autoplay=1&controls=0&loop=1&playlist=APHrOAFU6x8" frameborder="0" allowfullscreen></iframe>
+    <iframe id="videoFrame" src="https://www.youtube.com/embed/APHrOAFU6x8?autoplay=1&controls=0" frameborder="0" allowfullscreen></iframe>
   </div>
 
   <script>
     // Function to show the text container and set a timeout to hide it after 45 seconds
-    function showText() {
+    function showTextAndAudio() {
       document.getElementById("textContainer").style.display = "block";
+
       setTimeout(function() {
         document.getElementById("textContainer").style.display = "none";
+        playAudio();
       }, 45000); // 45 seconds in milliseconds
     }
 
@@ -75,8 +81,15 @@
     video.addEventListener("ended", function() {
       // Hide the video and show the text container when the video ends
       video.style.display = "none";
-      showText();
+      showTextAndAudio();
     });
+
+    // Function to play the audio
+    function playAudio() {
+      const audio = document.getElementById("audioElement");
+      audio.style.display = "block"; // Show the audio element
+      audio.play(); // Play the audio
+    }
   </script>
 
   <div class="text-container" id="textContainer">
@@ -92,5 +105,11 @@
       <p style="color: #3366ff;">2023 was golden; now, let's make the future shine brighter!</p>
     </div>
   </div>
+
+  <!-- Add your audio file and adjust the 'src' attribute accordingly -->
+  <audio id="audioElement" controls>
+    <source src="your-audio-file.m4a" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 </body>
 </html>
