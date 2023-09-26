@@ -55,7 +55,7 @@
 </head>
 <body>
   <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/APHrOAFU6x8?autoplay=1&controls=0&loop=1&playlist=APHrOAFU6x8" frameborder="0" allowfullscreen></iframe>
+    <iframe id="video" frameborder="0" allowfullscreen></iframe>
   </div>
   <div class="text-container">
     <div class="text">
@@ -70,6 +70,14 @@
       <p style="color: #3366ff;">2023 was golden; now, let's make the future shine brighter!</p>
     </div>
   </div>
+
+  <script>
+    // Delay autoplay of the video by 5 seconds
+    setTimeout(function() {
+      document.getElementById("video").src = "https://www.youtube.com/embed/APHrOAFU6x8?autoplay=1&controls=0&loop=1&playlist=APHrOAFU6x8";
+    }, 5000);
+  </script>
 </body>
 </html>
+
 
