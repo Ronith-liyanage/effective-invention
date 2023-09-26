@@ -51,6 +51,19 @@
         opacity: 1;
       }
     }
+
+    .play-button {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ff0000;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+
   </style>
 </head>
 <body>
@@ -59,33 +72,17 @@
   </div>
   <div class="text-container">
     <div class="text">
-      <p style="color: #ff0000;">We had a golden year in 2023.</p>
-      <p style="color: #00ff00;">We made a video of the memory collection.</p>
-      <p style="color: #0000ff;">We will be able to achieve the future. It is ours.</p>
-      <p style="color: #ff0000;">In 2023, we created unforgettable memories.</p>
-      <p style="color: #00ff00;">Laughter, adventures, and endless fun with friends.</p>
-      <p style="color: #0000ff;">Now, as Isala embarks on a new journey, we cherish the past.</p>
-      <p style="color: #ff9900;">But the future beckons with endless possibilities.</p>
-      <p style="color: #ff66cc;">Let's capture it with the same spirit and enthusiasm.</p>
-      <p style="color: #3366ff;">2023 was golden; now, let's make the future shine brighter!</p>
+      <!-- Your text content here -->
     </div>
+    <div class="play-button" onclick="playVideoWithSound()">Play Video</div>
   </div>
 
   <script>
     function playVideoWithSound() {
-      // Prompt the user
-      const userResponse = confirm("Click OK to play the video with sound.");
-
-      if (userResponse) {
-        // Set the video source to autoplay with sound
-        const videoFrame = document.getElementById("videoFrame");
-        videoFrame.src = "https://www.youtube.com/embed/APHrOAFU6x8?autoplay=1&controls=0&loop=1&playlist=APHrOAFU6x8";
-      }
+      // Set the video source to autoplay with sound
+      const videoFrame = document.getElementById("videoFrame");
+      videoFrame.src = "https://www.youtube.com/embed/APHrOAFU6x8?autoplay=1&controls=0&loop=1&playlist=APHrOAFU6x8";
     }
-
-    // Call the function when the page loads
-    window.onload = playVideoWithSound;
   </script>
 </body>
 </html>
-
