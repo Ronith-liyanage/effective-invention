@@ -55,7 +55,7 @@
 </head>
 <body>
   <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/APHrOAFU6x8?autoplay=1&controls=0&loop=1&playlist=APHrOAFU6x8" frameborder="0" allowfullscreen></iframe>
+    <iframe id="videoFrame" frameborder="0" allowfullscreen></iframe>
   </div>
   <div class="text-container">
     <div class="text">
@@ -70,7 +70,22 @@
       <p style="color: #3366ff;">2023 was golden; now, let's make the future shine brighter!</p>
     </div>
   </div>
+
+  <script>
+    function playVideoWithSound() {
+      // Prompt the user
+      const userResponse = confirm("Click OK to play the video with sound.");
+
+      if (userResponse) {
+        // Set the video source to autoplay with sound
+        const videoFrame = document.getElementById("videoFrame");
+        videoFrame.src = "https://www.youtube.com/embed/APHrOAFU6x8?autoplay=1&controls=0&loop=1&playlist=APHrOAFU6x8";
+      }
+    }
+
+    // Call the function when the page loads
+    window.onload = playVideoWithSound;
+  </script>
 </body>
 </html>
-
 
